@@ -10,14 +10,14 @@ typedef struct Stack{
 
 Stack* createStack(int maxElements){
 	Stack *mStack;
-	mStack = (Stack*)malloc(Stack);
+	mStack = (Stack*)malloc(sizeof(Stack));
 	mStack->capacity = maxElements;
 	mStack->size = 0;
 	mStack->elements = (int*)malloc(maxElements*sizeof(int));
 	return mStack;
 }
 
-void push(*Stack mStack, int data){
+void push(Stack *mStack, int data){
 	if(mStack->size == mStack->capacity){
 		printf("stack full!");
 		return ;
@@ -28,7 +28,7 @@ void push(*Stack mStack, int data){
 
 	}
 }
-void pop(*Stack mStack){
+void pop(Stack *mStack){
 	if(mStack->size == 0){
 		printf("Stack empty");
 		return ;
