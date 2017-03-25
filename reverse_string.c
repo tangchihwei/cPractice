@@ -4,27 +4,14 @@
 int strLength(char *str);
 
 void reverseString(char *str){
-	int length, lengthType; 
+	int length; 
 	length = strLength(str);
-	lengthType = length%2;
 
-	switch(lengthType){
-		case 0: //even
-			for (int i = 0; i < length/2; i++){
-				int temp = *(str+i);
-				*(str+i) = *(str+length-i-1);
-				*(str+length-i-1) = temp;
-			}
-			break;
-		case 1:
-			for (int i = 0; i < (length/2) ; i++){
-				int temp = *(str+i);
-				*(str+i) = *(str+length-1-i);
-				*(str+length-i-1) = temp;
-			}
-			break;
+	for (int i = 0; i < length/2; i++){
+		int temp = *(str+i);
+		*(str+i) = *(str+length-i-1);
+		*(str+length-i-1) = temp;
 	}
-	//check length odd or even
 }
 
 int strLength(char *str){
